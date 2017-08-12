@@ -1,12 +1,13 @@
 {
-  "presets": ["react-native"],
-  "plugins": [[
-    "module-alias", [
-      	{ "src": "./src/screen", "expose": "screens" },
-      	{ "src": "./src/components", "expose": "components" },
-      	{ "src": "./src/navigators", "expose": "navigators" },
-      	{ "src": "./src/actions", "expose": "actions" },
-      	{ "src": "./src/styles", "expose": "styles" }
-      ]
-   ]]
+	"presets": ["react-native"],
+	"plugins": [[
+		"module-alias", [
+				{ "src": "./src/screen", "expose": "screens" },
+				{ "src": "./src/components", "expose": "components" },
+				{ "src": "./src/navigators", "expose": "navigators" },
+				{ "src": "./src/actions", "expose": "actions" },
+				{ "src": "./src/styles", "expose": "styles" },
+				{ "src": "./src/utils", "expose": "utils" }
+			]
+	 ]]
 }
