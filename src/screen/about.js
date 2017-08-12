@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
 import {
 	Text,
+	StyleSheet,
 	View
 } from 'react-native';
 
-export default class About extends Component {
+import InfoApp from 'components/about/infoApp';
+
+class About extends Component {
 	render() {
 		return (
-			<View>
-				<Text>
-					Welcome About
-				</Text>
+			<View style={styles.containerAbout}>
+				<InfoApp />
 			</View>
 		);
 	}
 }
+
+const styles = StyleSheet.create({
+	containerAbout: {
+		marginTop: 20
+	},
+});
+
+
+
+export default About;

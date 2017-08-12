@@ -1,100 +1,55 @@
  [
- 	{
-		"dateString": "25/06/2017",
-		"timeStamp": 1498363200000,
-		"color": "Hijau",
-		"info": {
-			"name": "Quasimodogeniti",
-			"color": "Hijau",
-			"tata_ibadah": "Quasimodogeniti"
-		},
-		"bacaan": [
-			{
-				"kitab": "Mazmur",
-				"kitab_code": "KEJ",
-				"chapter": 128,
-				"verse": 2
-			},
-			{
-				"kitab": "Kisah Para Rasul",
-				"kitab_code": "KEJ",
-				"chapter": 10,
-				"verse": 2
-			},
-			{
-				"kitab": "Matius",
-				"kitab_code": "KEJ",
-				"chapter": 1,
-				"verse": 2
-			},
-			{
-				"kitab": "Matius",
-				"kitab_code": "KEJ",
-				"chapter": 1,
-				"verse": 2
-			}
-		],
-		"hafalan": {
-			"ayat_string": "Pada mulanya Allah menciptakan langit dan bumi",
-			"ayat": {
-				"kitab": "Kejadian",
-				"kitab_code": "KEJ",
-				"chapter": 1,
-				"verse": 2
-			}
-		},
-		"songs": {
-			"KJ": [10, 100, 99, 99, 199],
-			"BZ": [10, 1, 12, 123, 22]
-		}
-	},
 	{
-		"dateString": "25/09/2017",
-		"timeStamp": 1506272400000,
+		"dateString": "13/08/2017",
+		"timeStamp": 1502557200000,
 		"color": "Hijau",
 		"info": {
-			"name": "Quasimodogeniti",
+			"name": "9 Furi Trinitatis",
 			"color": "Hijau",
-			"tata_ibadah": "Quasimodogeniti"
+			"tata_ibadah": "Trinitatis"
 		},
 		"bacaan": [
 			{
-				"kitab": "Mazmur",
-				"kitab_code": "KEJ",
-				"chapter": 128,
-				"verse": 2
+				"kitab": "Yesaya",
+				"kitab_code": "YES",
+				"chapter": 28,
+				"verses_start": 14,
+				"verses_end": 19
 			},
 			{
-				"kitab": "Kisah Para Rasul",
-				"kitab_code": "KEJ",
+				"kitab": "Roma",
+				"kitab_code": "ROM",
 				"chapter": 10,
-				"verse": 2
+				"verses_start": 5,
+				"verses_end": 15
 			},
 			{
-				"kitab": "Matius",
-				"kitab_code": "KEJ",
-				"chapter": 1,
-				"verse": 2
+				"kitab": "1 Raja-Raja",
+				"kitab_code": "1RJ",
+				"chapter": 19,
+				"verses_start": 1,
+				"verses_end": 18
 			},
 			{
-				"kitab": "Matius",
-				"kitab_code": "KEJ",
-				"chapter": 1,
-				"verse": 2
+				"kitab": "Roma",
+				"kitab_code": "ROM",
+				"chapter": 10,
+				"verses_start": 13,
+				"verses_end": null
 			}
 		],
 		"hafalan": {
-			"ayat_string": "Pada mulanya Allah menciptakan langit dan bumi",
+			"ayat_string": "Sebab barangsiapa yang berseru kepada nama Tuhan, akan diselamatkan",
 			"ayat": {
-				"kitab": "Kejadian",
-				"kitab_code": "KEJ",
-				"chapter": 1,
-				"verse": 2
+				"kitab": "Roma",
+				"kitab_code": "ROM",
+				"chapter": 10,
+				"verse": 13
 			}
 		},
 		"songs": {
-			"KJ": [10, 100, 99, 99, 199],
-			"BZ": [10, 1, 12, 123, 22]
+			"KJ": [15, 453, 370, 457, 364],
+			"BZ": [6, 159, 299, 321, 396]
 		}
 	}
 ]

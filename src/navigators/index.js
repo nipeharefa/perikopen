@@ -14,7 +14,7 @@ const BasicApp = TabNavigator({
 		screen: AboutScreen,
 		path: '/about',
 		navigationOptions: {
-			tabBarLabel: 'Help',
+			tabBarLabel: 'Info',
 		}
 	}
 },{

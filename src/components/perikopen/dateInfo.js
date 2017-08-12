@@ -12,7 +12,7 @@ class DayInfo extends Component {
 		return (
 			<View style={styles.centered}>
 				<TouchableOpacity>
-					<Text>Date today</Text>
+					<Text>{ this.props.dateString }</Text>
 				</TouchableOpacity>
 			</View>
 		);

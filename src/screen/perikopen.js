@@ -14,6 +14,9 @@ import { getPerikopenToday, setPerikopenToday } from 'actions/perikopen';
 
 import DayInfo from 'components/perikopen/dayInfo';
 import DateInfo from 'components/perikopen/dateInfo';
+import ReadingList from 'components/perikopen/readingList';
+import RoteVerses from 'components/perikopen/roteVerses';
+import SongList from 'components/perikopen/songList';
 
 class Perikopen extends Component {
 
@@ -67,8 +70,13 @@ class Perikopen extends Component {
 		const showPicker = this.showPicker.bind(this, 'calendar', {date: calendarDate, mode: 'calendar'});
 		return (
 			<View style={{flex: 1}}>
-				<DateInfo />
-				<DayInfo />
+
+				<DateInfo dateString={today.dateString}/>
+				<DayInfo info={today.info}/>
+				<ReadingList readingList={ today.bacaan }/>
+				<RoteVerses hafalan={today.hafalan} />
+				<SongList songs={today.songs} />
+
 				<ActionButton
 					buttonColor="rgba(231,76,60,1)"
 					degrees={0}
