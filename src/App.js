@@ -1,35 +1,46 @@
 import React, { Component } from 'react';
+import {
+	Text,
+	View
+} from 'react-native';
 import Navigators from './navigators';
-import { perikopen } from './db/perikopen';
+import moment from 'moment';
+import perikopenDB from './db/perikopen.json';
 import { List } from 'immutable';
 import { connect } from 'react-redux';
-import moment from 'moment';
-import { initPerikopen, setPerikopenToday } from 'actions/perikopen';
+import { initPerikopen, setPerikopenToday, getPerikopen } from 'actions/perikopen';
+var filter = require('lodash.filter');
 
 
 class App extends Component {
-	componentWillMount() {
-		console.log('Root Component Will Mount, Oke');
-		this.setTodayPerikopen();
-		console.log('result');
+	componentDidMount() {
+		console.log('ComponentDidMount');
+		console.log(this.props.perikopen);
 	}
-	setTodayPerikopen() {
-      const listArr = List(perikopen);
-      const today = moment().format('YYYY-MM-DD');
-      const now = moment(today).format('x');
-      const filtered = listArr.filter( x => {
-        return x.timeStamp >= now;
-      });
-      const result = filtered.first() || {};
-      console.log(result);
-      this.props.setPerikopenToday(result);
-    }
+	componentWillMount() {
+		console.log('componentWillMount');
+		this.props.initPerikopen(perikopenDB);
+		const today = moment().format('YYYY-MM-DD');
+		const todayOnUnixFormat = moment(today).unix();
+		console.log(todayOnUnixFormat);
+	}
 	render(){
+		const a = this.props.perikopen.map( x=> {
+			return (
+				<Text key={x.timeStamp}>HEllo</Text>
+			);
+		})
 		return (
-			<Navigators />
+			<View>
+				{a}
+			</View>
 		);
 	}
 }
 
-export default connect( state => ({ nav: state.nav }),
-	{ dispatch: initPerikopen, setPerikopenToday } )(App);
+const mapStateToProps = state => {
+	return {
+		perikopen: state.perikopen.perikopens
+	};
+};
+export default connect( mapStateToProps, { initPerikopen } )(App);

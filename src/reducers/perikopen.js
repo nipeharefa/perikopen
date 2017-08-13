@@ -1,19 +1,17 @@
-import { List, Map } from 'immutable';
-import { INIT_PERIKOPEN, SET_TODAY_PERIKOPEN } from '../constants';
+import { INIT_PERIKOPEN, SET_TODAY_PERIKOPEN, GET_PERIKOPEN } from '../constants';
 
-const perikopen = Map({
-  items: List([]),
-  today: Map(),
-  perikopens: List([])
-});
+const initialState = {
+  perikopens: [],
+};
 
-export default function update(todos = perikopen, action) {
+export default function update(state = initialState, action) {
   switch (action.type) {
     case INIT_PERIKOPEN:
-      return todos.set('items', List(action.payload));
-    case SET_TODAY_PERIKOPEN:
-      return todos.set('today', action.payload);
+      Object.assign({}, state, {
+        perikopens: action.payload
+      });
+      return state;
     default:
-      return todos;
+      return state;
   }
 }
