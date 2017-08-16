@@ -10,7 +10,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import ActionButton from 'react-native-action-button';
 import moment from 'moment';
 import Search from 'utils/findPerikop';
-import { getPerikopenToday, setPerikopenToday } from 'actions/perikopen';
 
 import DayInfo from 'components/perikopen/dayInfo';
 import DateInfo from 'components/perikopen/dateInfo';
@@ -62,25 +61,24 @@ class Perikopen extends Component {
 		}
 	}
 	render() {
-		const today = this.props.today;
-		const calendarDate = moment(today.timeStamp, 'x').toDate();
+		// const today = this.props.today;
+		// const calendarDate = moment(today.timeStamp, 'x').toDate();
 		const customTextButton = (
 			<Icon name="calendar" size={25} color="white" />
 		);
-		const showPicker = this.showPicker.bind(this, 'calendar', {date: calendarDate, mode: 'calendar'});
+		// const showPicker = this.showPicker.bind(this, 'calendar', {date: calendarDate, mode: 'calendar'});
 		return (
 			<View style={{flex: 1}}>
 
-				<DateInfo dateString={today.dateString}/>
+				{/* <DateInfo dateString={today.dateString}/>
 				<DayInfo info={today.info}/>
 				<ReadingList readingList={ today.bacaan }/>
 				<RoteVerses hafalan={today.hafalan} />
-				<SongList songs={today.songs} />
+				<SongList songs={today.songs} /> */}
 
 				<ActionButton
 					buttonColor="rgba(231,76,60,1)"
-					degrees={0}
-					onPress={ showPicker } icon={customTextButton}>
+					degrees={0} icon={customTextButton}>
 					<Icon name="calendar" style={styles.actionButtonIcon} />
 				</ActionButton>
 			</View>
@@ -103,5 +101,17 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default connect( state => ({ today: state.perikopen.get('today') }),
-  { getPerikopenToday, setPerikopenToday } )(Perikopen);
+const mapStateToProps = state => {
+	return {
+		activeIndex: state.perikopen.activeIndex,
+		perikopen: state.perikopen.perikopens
+	};
+};
+
+const mapActionToProps = dispatch => {
+	return {
+
+	};
+};
+
+export default connect( mapStateToProps, mapActionToProps )(Perikopen);

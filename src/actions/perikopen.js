@@ -3,6 +3,7 @@ import { INIT_PERIKOPEN,
 	GET_TODAY_PERIKOPEN,
 	SET_TODAY_PERIKOPEN,
 	GET_PERIKOPEN,
+	SET_ACTIVE_PERIKOPEN,
 	FILL_PERIKOPENS } from '../constants';
 
 export function fillPerikopen(n) {
@@ -39,4 +40,11 @@ export function setPerikopenToday(n) {
 		type: SET_TODAY_PERIKOPEN,
 		payload: n
 	};
+}
+
+export function setActivePerikopen(n) {
+	return {
+		type: SET_ACTIVE_PERIKOPEN,
+		payload: n
+	}
 }
