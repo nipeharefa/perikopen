@@ -30,7 +30,7 @@ class App extends Component {
 		const todayOnUnixFormat = moment(today).unix();
 		console.info(todayOnUnixFormat);
 		const activeIndex = this.props.perikopen.findIndex( x => {
-			return x.timeStamp === todayOnUnixFormat;
+			return x.timeStamp >= todayOnUnixFormat;
 		});
 		return activeIndex;
 	}

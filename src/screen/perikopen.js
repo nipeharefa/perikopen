@@ -3,19 +3,21 @@ import { connect } from 'react-redux';
 import {
 	DatePickerAndroid,
 	StyleSheet,
+	ScrollView,
 	View
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ActionButton from 'react-native-action-button';
 import moment from 'moment';
-import Search from 'utils/findPerikop';
 
 import DayInfo from 'components/perikopen/dayInfo';
 import DateInfo from 'components/perikopen/dateInfo';
 import ReadingList from 'components/perikopen/readingList';
 import RoteVerses from 'components/perikopen/roteVerses';
 import SongList from 'components/perikopen/songList';
+
+import { setActivePerikopen } from 'actions/perikopen';
 
 class Perikopen extends Component {
 
@@ -41,43 +43,46 @@ class Perikopen extends Component {
 	}
 	showPicker = async (stateKey, options) => {
 		try {
-			var newState = {};
 			const {action, year, month, day} = await DatePickerAndroid.open(options);
 			if (action === DatePickerAndroid.dismissedAction) {
 				return;
 			} else {
 				var date = new Date(year, month, day);
-				const timestampTarget = moment(date).format('x');
-				const result = Search(this.props.perikopen, timestampTarget);
-				if (result.dateString !== undefined) {
-					this.props.setPerikopenToday(result);
+				const timestampTarget = moment(date).unix();
+				const activeIndex = this.props.perikopen.findIndex( x => {
+					return x.timeStamp === timestampTarget;
+				});
+				console.log(activeIndex);
+				if (activeIndex >= 0) {
+					this.props.setActivePerikopen(activeIndex);
 					return;
 				}
 				return;
 			}
-			this.setState(newState);
-			} catch ({code, message}) {
+		} catch ({code, message}) {
 				console.warn(`Error in example '${stateKey}': `, message);
 		}
 	}
 	render() {
-		// const today = this.props.today;
-		// const calendarDate = moment(today.timeStamp, 'x').toDate();
+		const index = this.props.activeIndex;
+		const perikopen = this.props.perikopen[index];
+		const calendarDate = moment.unix(perikopen.timeStamp).toDate();
 		const customTextButton = (
 			<Icon name="calendar" size={25} color="white" />
 		);
-		// const showPicker = this.showPicker.bind(this, 'calendar', {date: calendarDate, mode: 'calendar'});
+		const showPicker = this.showPicker.bind(this, 'calendar', {date: calendarDate, mode: 'calendar'});
 		return (
 			<View style={{flex: 1}}>
-
-				{/* <DateInfo dateString={today.dateString}/>
-				<DayInfo info={today.info}/>
-				<ReadingList readingList={ today.bacaan }/>
-				<RoteVerses hafalan={today.hafalan} />
-				<SongList songs={today.songs} /> */}
-
+				<ScrollView>
+					<DateInfo dateString={perikopen.dateString}/>
+					<DayInfo info={perikopen.info}/>
+					<ReadingList readingList={ perikopen.bacaan }/>
+					<RoteVerses hafalan={ perikopen.hafalan } />
+					<SongList songs={ perikopen.songs } />
+				</ScrollView>
 				<ActionButton
 					buttonColor="rgba(231,76,60,1)"
+					onPress={ showPicker }
 					degrees={0} icon={customTextButton}>
 					<Icon name="calendar" style={styles.actionButtonIcon} />
 				</ActionButton>
@@ -110,7 +115,9 @@ const mapStateToProps = state => {
 
 const mapActionToProps = dispatch => {
 	return {
-
+		setActivePerikopen(data) {
+			dispatch(setActivePerikopen(data));
+		}
 	};
 };
 
