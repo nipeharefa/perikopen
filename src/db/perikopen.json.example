@@ -1,0 +1,108 @@
+ [
+	{
+		"dateString": "20/08/2017",
+		"timeStamp": 1503162000,
+		"color":s "Hijau",
+		"info": {
+			"name": "9 Furi Trinitatis",
+			"color": "Hijau",
+			"tata_ibadah": "Trinitatis"
+		},
+		"bacaan": [
+			{
+				"kitab": "Yesaya",
+				"kitab_code": "YES",
+				"chapter": 28,
+				"verses_start": 14,
+				"verses_end": 19
+			},
+			{
+				"kitab": "Roma",
+				"kitab_code": "ROM",
+				"chapter": 10,
+				"verses_start": 5,
+				"verses_end": 15
+			},
+			{
+				"kitab": "1 Raja-Raja",
+				"kitab_code": "1RJ",
+				"chapter": 19,
+				"verses_start": 1,
+				"verses_end": 18
+			},
+			{
+				"kitab": "Roma",
+				"kitab_code": "ROM",
+				"chapter": 10,
+				"verses_start": 13,
+				"verses_end": null
+			}
+		],
+		"hafalan": {
+			"ayat_string": "Sebab barangsiapa yang berseru kepada nama Tuhan, akan diselamatkan",
+			"ayat": {
+				"kitab": "Roma",
+				"kitab_code": "ROM",
+				"chapter": 10,
+				"verse": 13
+			}
+		},
+		"songs": {
+			"KJ": [15, 453, 370, 457, 364],
+			"BZ": [6, 159, 299, 321, 396]
+		}
+	},
+	{
+		"dateString": "27/08/2017",
+		"timeStamp": 1503766800,
+		"color": "Hijau",
+		"info": {
+			"name": "9 Furi Trinitatis",
+			"color": "Hijau",
+			"tata_ibadah": "Trinitatis"
+		},
+		"bacaan": [
+			{
+				"kitab": "Yesaya",
+				"kitab_code": "YES",
+				"chapter": 28,
+				"verses_start": 14,
+				"verses_end": 19
+			},
+			{
+				"kitab": "Roma",
+				"kitab_code": "ROM",
+				"chapter": 10,
+				"verses_start": 5,
+				"verses_end": 15
+			},
+			{
+				"kitab": "1 Raja-Raja",
+				"kitab_code": "1RJ",
+				"chapter": 19,
+				"verses_start": 1,
+				"verses_end": 18
+			},
+			{
+				"kitab": "Roma",
+				"kitab_code": "ROM",
+				"chapter": 10,
+				"verses_start": 13,
+				"verses_end": null
+			}
+		],
+		"hafalan": {
+			"ayat_string": "Sebab barangsiapa yang berseru kepada nama Tuhan, akan diselamatkan",
+			"ayat": {
+				"kitab": "Roma",
+				"kitab_code": "ROM",
+				"chapter": 10,
+				"verse": 13
+			}
+		},
+		"songs": {
+			"KJ": [15, 453, 370, 457, 364],
+			"BZ": [6, 159, 299, 321, 396]
+		}
+	}
+]
