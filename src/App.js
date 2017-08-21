@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+	AsyncStorage,
 	Text
 } from 'react-native';
 import Navigators from './navigators';
@@ -10,12 +11,24 @@ import { initPerikopen, setActivePerikopen } from 'actions/perikopen';
 
 
 class App extends Component {
+	setDbIntoAsyStorage = async () => {
+		try {
+			const a = await AsyncStorage.getItem('p.db2');
+			if (a) {
+				return JSON.parse(a);
+			}
+			const str = JSON.stringify(perikopenDB);
+			const results = await AsyncStorage.setItem('p.db', str);
+			return JSON.parse(results);
+		} catch (error) {
+			return perikopenDB;
+		}
+	}
 	componentWillMount() {
 		console.log('componentWillMount');
 		const self = this;
 		this.cari().then( x => {
 			const index = self.getIndexTodayPerikopen();
-			console.log(index);
 			self.props.setActivePerikopen(index);
 		});
 	}
@@ -23,7 +36,7 @@ class App extends Component {
 		console.log('ComponentDidMount');
 	}
 	async cari() {
-		this.props.initPerikopen(perikopenDB);
+		await this.props.initPerikopen(perikopenDB);
 	}
 	getIndexTodayPerikopen () {
 		const today = moment().format('YYYY-MM-DD');
@@ -35,7 +48,6 @@ class App extends Component {
 		return activeIndex;
 	}
 	render() {
-		console.log(this.props.activeIndex);
 		const ContainerScreen = () => {
 			if (this.props.activeIndex != null) {
 				return ( <Navigators /> );

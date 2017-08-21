@@ -16,7 +16,7 @@ export function fillPerikopen(n) {
 export function getPerikopen() {
 	return {
 		type: GET_PERIKOPEN
-	}
+	};
 }
 
 export function initPerikopen(n) {
@@ -46,5 +46,5 @@ export function setActivePerikopen(n) {
 	return {
 		type: SET_ACTIVE_PERIKOPEN,
 		payload: n
-	}
-}
+	};
+};
