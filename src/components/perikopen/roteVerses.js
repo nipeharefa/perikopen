@@ -25,7 +25,9 @@ class RoteVerses extends Component {
 
 const styles = StyleSheet.create({
 	containerHafalan: {
-		marginTop: 10
+		marginTop: 10,
+		paddingLeft: 10,
+		paddingRight: 10
 	},
 	hafalan: {
 		textAlign: 'center',

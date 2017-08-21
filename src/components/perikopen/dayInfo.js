@@ -53,7 +53,9 @@ class DayInfo extends Component {
 
 const styles = StyleSheet.create({
 	containerDayInfo: {
-		marginTop: 20
+		marginTop: 20,
+		paddingLeft: 10,
+		paddingRight: 10
 	},
 	rowDayInfo: {
 		marginTop: 2,

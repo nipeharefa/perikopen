@@ -37,8 +37,8 @@ class ReadingList extends Component {
 
 const styles = StyleSheet.create({
 	containerBacaan: {
-		paddingLeft: 10,
-		paddingRight: 10,
+		paddingLeft: 25,
+		paddingRight: 25,
 		marginTop: 20,
 		marginBottom: 20
 	},
