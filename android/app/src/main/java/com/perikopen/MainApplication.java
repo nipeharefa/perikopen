@@ -1,4 +1,4 @@
-package com.perikopen;
+package com.tukadastudio.perikopen;
 
 import android.app.Application;
 

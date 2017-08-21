@@ -1,4 +1,4 @@
-package com.perikopen;
+package com.tukadastudio.perikopen;
 
 import com.facebook.react.ReactActivity;
 
