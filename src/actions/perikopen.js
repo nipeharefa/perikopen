@@ -47,4 +47,4 @@ export function setActivePerikopen(n) {
 		type: SET_ACTIVE_PERIKOPEN,
 		payload: n
 	};
-};
+}

@@ -12,7 +12,7 @@ class InfoApp extends Component {
 		return (
 			<View style={[styles.centered, styles.half]}>
 				<Text>Perikopen BNKP 2017</Text>
-				<Text>Versi <Text style={styleLocale.bold}>0.1</Text></Text>
+				<Text>Versi <Text style={styleLocale.bold}>0.3.1</Text></Text>
 				<Text>20-08-2017</Text>
 			</View>
 		);

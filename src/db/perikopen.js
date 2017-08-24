@@ -1,3 +1,3 @@
-import db from './perikopen.json'
+import db from './perikopen.json';
 
-export const perikopen = db
+export const perikopen = db;
