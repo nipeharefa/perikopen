@@ -1,7 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native';
-
 var { height } = Dimensions.get('window');
-console.log(height);
+
 export default StyleSheet.create({
 	fullWidth: {
 		flex: 1
