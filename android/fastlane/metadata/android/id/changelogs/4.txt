@@ -1,0 +1,4 @@
+- Penambahan Buku Naino
+- Kontak Developer
+- Perbaikan pada dialog pemilihan tanggal pada android versi Lolipop ke bawah
+- Perbaikan Pager Lolipop

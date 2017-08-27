@@ -97,8 +97,8 @@ android {
 	defaultConfig {
 		applicationId "com.tukadastudio.perikopen"
 		minSdkVersion 16
-		targetSdkVersion 22
-		versionCode 11
+		targetSdkVersion 25
+		versionCode 13
         versionName "0.3.1"
 		ndk {
 			abiFilters "armeabi-v7a", "x86"

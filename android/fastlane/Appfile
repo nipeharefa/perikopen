@@ -1,0 +1,2 @@
+json_key_file "~/Documents/Perikopen/nipeharefa-166df35e45ee.json" # Path to the json secret file - Follow https://github.com/fastlane/supply#setup to get one
+package_name "com.tukadastudio.perikopen" # e.g. com.krausefx.app
