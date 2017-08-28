@@ -1,13 +1,18 @@
 {
-	"presets": ["react-native"],
-	"plugins": [[
-		"module-alias", [
-			{ "src": "./src/screen", "expose": "screens" },
-			{ "src": "./src/components", "expose": "components" },
-			{ "src": "./src/navigators", "expose": "navigators" },
-			{ "src": "./src/actions", "expose": "actions" },
-			{ "src": "./src/styles", "expose": "styles" },
-			{ "src": "./src/utils", "expose": "utils" }
-		]
-	 ]]
+  "presets": ["react-native"],
+  "retainLines": true,
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "extensions": [".js", ".ios.js", ".android.js"],
+      "alias": {
+        "screens": "./screens",
+        "actions": "./actions",
+        "components": "./components",
+        "navigators": "./navigators",
+        "styles": "./styles",
+        "utils": "./utils"
+      }
+    }]
+  ]
 }

@@ -23,6 +23,7 @@ const BasicApp = TabNavigator({
 	}
 },{
 	tabBarPosition: 'bottom',
+	lazy: true,
 	tabBarOptions: {
 		showIcon: true,
 		labelStyle: {
