@@ -1,5 +1,6 @@
 v0.3.2
 
+* Update Versi ke `0.3.2`
 * Update Splash Screen ke versi `3.0`
 * Update React Native ke versi `0.47.2`
 * Ganti nama folder dari `screen` ke `screens`
