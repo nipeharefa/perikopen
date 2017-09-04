@@ -1,6 +1,8 @@
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import PerikopenScreen from 'screens/perikopen';
 import AboutScreen from 'screens/about';
+import KidungJemaat from 'screens/kidungJemaat';
+import SelectKidungJemaat from 'screens/kidungJemaatPickSong';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import React from 'react';
 
@@ -10,6 +12,14 @@ const BasicApp = TabNavigator({
 		path: '/',
 		navigationOptions: {
 			tabBarLabel: 'Perikopen',
+			tabBarIcon: () => <Icon name="calendar" style={{fontSize: 20}}/>
+		}
+	},
+	KJ: {
+		screen: KidungJemaat,
+		path: '/kj',
+		navigationOptions: {
+			tabBarLabel: 'Kidung Jemaat',
 			tabBarIcon: () => <Icon name="calendar" style={{fontSize: 20}}/>
 		}
 	},
@@ -33,4 +43,19 @@ const BasicApp = TabNavigator({
 	}
 });
 
-export default BasicApp;
+const ContainerTabOptions = {
+	headerMode: 'float'
+};
+const ContainerTab = StackNavigator({
+	Main:{ 
+		screen: BasicApp,
+		navigationOptions: {
+			header: null
+		}
+	},
+	SelectKJ: {
+		screen: SelectKidungJemaat
+	}
+}, ContainerTabOptions);
+
+export default ContainerTab;
